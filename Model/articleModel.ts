@@ -27,6 +27,9 @@ const articleModel = new mongoose.Schema(
     authorId: {
       type: String,
     },
+    rate: {
+      type: Number,
+    },
     like: {
       type: Array,
     },
@@ -42,4 +45,4 @@ const articleModel = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model<iArticleData>("authors", articleModel);
+export default mongoose.model<iArticleData>("articles", articleModel);

@@ -17,4 +17,4 @@ const ratingModel = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model<iRatingData>("authors", ratingModel);
+export default mongoose.model<iRatingData>("ratings", ratingModel);

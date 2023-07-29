@@ -8,20 +8,21 @@ interface iAuthor {
     avatarId?: string;
     article?: {}[];
   }
-  
-interface iArticle {
+  interface iArticle {
+    rate?: number;
     title?: string;
     content?: string;
     description?: string;
-    authorId?: string;
+    authorID?: string;
     image?: string;
-    imageId?: string;
+    imageID?: string;
     coverImage?: string;
-    coverImageId?: string;
-    rating?: [];
+    coverImageID?: string;
+    ratings?: [];
     likes?: [];
     author?: {};
   }
+  
 
 interface iRating {
     rate?: number;
