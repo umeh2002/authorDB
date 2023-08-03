@@ -27,6 +27,7 @@ export const createArticle = async (req: any, res: Response) => {
 
     author.save();
 
+    
     return response.status(201).json({
       message: "Success",
       data: article,

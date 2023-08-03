@@ -7,6 +7,8 @@ interface iAuthor {
     avatar?: string;
     avatarId?: string;
     article?: {}[];
+    friends?:string[]
+    request?: string[]
   }
   interface iArticle {
     rate?: number;
