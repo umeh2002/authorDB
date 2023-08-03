@@ -1,33 +1,47 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 import { iAuthorData } from "../Utils/interface";
 
+const authorModel = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+    },
 
+    email: {
+      type: String,
+      unique: true,
+      trim: true,
+      toLowercase: true,
+    },
 
-const authorModel = new mongoose.Schema({
-  name: {
-    type: String,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim:true,
-    toLowerCase: true
-  },
-  password: {
-    type: String,
-    min: 7,
-  },
-  avatar: {
-    type: String,
-  },
-  avatarId: {
-    type: String,
-  },
-  article:[{
-    type:mongoose.Types.ObjectId,
-    ref:"articles"
-  }]
-},{timestamps:true});
+    password: {
+      type: String,
+    },
 
-export default mongoose.model<iAuthorData>("authors", authorModel)
+    avatar: {
+      type: String,
+    },
+
+    avatarID: {
+      type: String,
+    },
+
+    articles: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "articles",
+      },
+    ],
+
+    friends: {
+      type: Array<String>,
+    },
+
+    request: {
+      type: Array<String>,
+    },
+  },
+  { timestamps: true },
+);
+
+export default mongoose.model<iAuthorData>("authors", authorModel);

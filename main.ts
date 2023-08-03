@@ -3,6 +3,8 @@ import express, { Application, Request, Response } from "express";
 import author from "./Router/authorRouter";
 import article from "./Router/articleRouter";
 import rating from "./Router/ratingRouter";
+import friends from "./Router/friendRouter";
+import request from "./Router/requestRouter";
 
 const main = (app: Application) => {
   app.use(express.json());
@@ -23,6 +25,9 @@ const main = (app: Application) => {
   app.use("/api/v1/author", author);
   app.use("/api/v1/article", article);
   app.use("/api/v1/rating", rating);
+  app.use("/api/v1/friends", friends);
+  app.use("/api/v1/request", request);
+
 };
 
 export default main;

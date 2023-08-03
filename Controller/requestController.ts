@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import mongoose from "mongoose";
-import authorModel from "../model/authorModel";
+import authorModel from "../Model/authorModel";
 
 export const makeRequest = async (req: Request, res: Response) => {
   try {
